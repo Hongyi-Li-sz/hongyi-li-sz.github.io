@@ -716,7 +716,6 @@
         <div class="hero-actions" id="contact">
           <a class="button primary" href="https://github.com/Hongyi-Li-sz" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a class="button" href="#publications">Publications</a>
-          <span class="plain-email"> 23b904015@stu.hit.edu.cn</span>
         </div>
       </div>
 
@@ -846,6 +845,7 @@
         title: "Hinge Regression Trees and HRT-Boost: Newton-Optimized Oblique Learning for Compact Tabular Models",
         authors: "<strong>Hongyi Li</strong>, Jun Xu, and Hong Yan",
         venue: "Preprint",
+        venueTag: "Preprint",
         pdf: "https://arxiv.org/pdf/2605.23422",
         code: "https://github.com/Hongyi-Li-sz/HRT-Boost",
         firstAuthor: true
@@ -855,6 +855,7 @@
         title: "Interpretable Multi-Agent Reinforcement Learning for Traffic Signal Control: Influence Mechanism and Piecewise Linear Approximation",
         authors: "Zhiyue Luo, <strong>Hongyi Li</strong>, Jun Xu, and Fanglin Chen",
         venue: "IEEE Transactions on Automation Science and Engineering (IEEE TASE), 2025",
+        venueTag: "IEEE TASE",
         paper: "https://doi.org/10.1109/TASE.2025.3618243",
         firstAuthor: false
       },
@@ -863,6 +864,7 @@
         title: "Hinge Regression Tree: A Newton Method for Oblique Regression Tree Splitting",
         authors: "<strong>Hongyi Li</strong>, Han Lin, and Jun Xu",
         venue: "International Conference on Learning Representations (ICLR), 2026",
+        venueTag: "ICLR",
         pdf: "https://arxiv.org/pdf/2602.05371",
         paper: "https://openreview.net/forum?id=3pZwJB6SX9",
         code: "https://github.com/Hongyi-Li-sz/Hinge-Regression-Tree",
@@ -873,6 +875,7 @@
         title: "Distributed Model Predictive Control for Energy and Comfort Optimization in Large Buildings Using Piecewise Affine Approximation",
         authors: "<strong>Hongyi Li</strong>, Jun Xu, and JinFeng Liu",
         venue: "IEEE Robotics and Automation Letters (IEEE RA-L), 2026",
+        venueTag: "IEEE RA-L",
         pdf: "https://arxiv.org/pdf/2602.05376",
         paper: "https://doi.org/10.1109/LRA.2026.3665065",
         firstAuthor: true
@@ -882,6 +885,7 @@
         title: "Priority-Based Energy Allocation in Buildings Through Distributed Model Predictive Control",
         authors: "<strong>Hongyi Li</strong>, Jun Xu, and Qianchuan Zhao",
         venue: "IEEE Transactions on Automation Science and Engineering (IEEE TASE), 2025",
+        venueTag: "IEEE TASE",
         pdf: "https://arxiv.org/pdf/2403.13648",
         paper: "https://doi.org/10.1109/TASE.2024.3464612",
         firstAuthor: true
@@ -891,10 +895,12 @@
         title: "Economic Model Predictive Control in Buildings Based on Piecewise Linear Approximation of Predicted Mean Vote Index",
         authors: "<strong>Hongyi Li</strong>, Jun Xu, Qianchuan Zhao, and Sixin Wang",
         venue: "IEEE Transactions on Automation Science and Engineering (IEEE TASE), 2024",
+        venueTag: "IEEE TASE",
         paper: "https://doi.org/10.1109/TASE.2023.3279278",
         firstAuthor: true
       }
     ];
+
 
     const publicationList = document.getElementById("publication-list");
 
@@ -907,7 +913,7 @@
         article.innerHTML = `
           <div class="pub-topline">
             <span class="year-badge">${pub.year}</span>
-            <span class="venue-badge">${pub.venue.split(",")[0]}</span>
+            <span class="venue-badge">${pub.venueTag || pub.venue}</span>
             ${pub.firstAuthor ? '<span class="tag green">First Author</span>' : ""}
           </div>
           <h3 class="pub-title">${pub.title}</h3>
