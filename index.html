@@ -2,288 +2,757 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hongyi Li</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hongyi Li - Ph.D. Student in Control Science and Engineering at Harbin Institute of Technology, Shenzhen." />
+  <title>Hongyi Li | Homepage</title>
 
   <style>
+    :root {
+      --bg: #f6f8fb;
+      --surface: #ffffff;
+      --surface-soft: #f8fafc;
+      --text: #111827;
+      --muted: #5f6b7a;
+      --subtle: #8a94a6;
+      --border: #e5eaf1;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-soft: #eff6ff;
+      --shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 999px;
+      --max-width: 1040px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-      background: #f7f7f7;
-      color: #222;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.10), transparent 32rem),
+        radial-gradient(circle at top right, rgba(14, 165, 233, 0.08), transparent 28rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
     }
 
-    .tag {
-      display: inline-block;
-      margin-left: 8px;
-      padding: 2px 7px;
-      border-radius: 10px;
-      background: #eef5ff;
-      color: #0066cc;
-      font-size: 12px;
-      font-weight: 500;
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.18s ease, border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    a:hover {
+      color: var(--primary-dark);
     }
 
-    .top {
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 28px 22px 56px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 20px;
+      justify-content: space-between;
+      gap: 18px;
+      margin: 0 auto 28px;
+      padding: 14px 18px;
+      border: 1px solid rgba(229, 234, 241, 0.82);
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
     }
 
-    .left {
-      flex: 1;
+    .nav-name {
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      white-space: nowrap;
     }
 
-    .research {
-      margin-top: 30px;
-    }
-
-    
-    .section {
-      margin-top: 20px;
-    }
-    
-    .section-title {
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: #333;
-    }
-    
-    .tags {
+    .nav-links {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
       gap: 8px;
     }
-    
-    .research .tag {
-      font-size: 15px;
-      padding: 5px 12px;
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 650;
+      padding: 7px 10px;
+      border-radius: var(--radius-sm);
     }
 
-    
-    .focus-list {
-      margin: 0;
-      padding-left: 18px;
-      color: #444;
-    }
-    
-    .focus-list li {
-      margin-bottom: 6px;
+    .nav-links a:hover {
+      color: var(--primary);
+      background: var(--primary-soft);
     }
 
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 210px;
+      gap: 34px;
+      align-items: center;
+      padding: 42px;
+      border: 1px solid rgba(229, 234, 241, 0.9);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: var(--shadow);
+    }
 
-    .avatar {
-      width: 150px;
-      border-radius: 10px;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      padding: 6px 11px;
+      border: 1px solid #dbeafe;
+      border-radius: var(--radius-sm);
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      font-size: 13px;
+      font-weight: 750;
     }
 
     h1 {
       margin: 0;
+      font-size: clamp(42px, 7vw, 68px);
+      line-height: 1.02;
+      letter-spacing: -0.055em;
     }
 
-    .info {
-      color: #555;
-      margin-top: 10px;
+    .chinese-name {
+      margin-left: 10px;
+      color: var(--muted);
+      font-weight: 650;
+      letter-spacing: -0.04em;
     }
 
-    h2 {
-      margin-top: 40px;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 6px;
+    .role {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.55;
     }
 
-    .publication {
-      margin: 22px 0;
-    }
-    
-    .pub-title {
-      font-weight: 600;
+    .summary {
+      max-width: 680px;
+      margin: 20px 0 0;
+      color: #334155;
+      font-size: 17px;
     }
 
-    .buttons {
-      margin-top: 6px;
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
     }
 
     .button {
-      display: inline-block;
-      padding: 4px 10px;
-      margin-right: 6px;
-      border: 1px solid #0066cc;
-      border-radius: 6px;
-      color: #0066cc;
-      font-size: 13px;
-      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 40px;
+      padding: 9px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: #243145;
+      font-size: 14px;
+      font-weight: 750;
+      line-height: 1;
     }
 
+    .button.primary {
+      border-color: var(--primary);
+      background: var(--primary);
+      color: #ffffff;
+    }
 
     .button:hover {
-      background: #0066cc;
-      color: white;
-    }
-
-    a {
-      color: #0066cc;
+      transform: translateY(-1px);
+      border-color: #bfdbfe;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .button.primary:hover {
+      border-color: var(--primary-dark);
+      background: var(--primary-dark);
+      color: #ffffff;
+    }
+
+    .avatar-wrap {
+      justify-self: end;
+    }
+
+    .avatar {
+      display: block;
+      width: 190px;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 34px;
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+      background: var(--surface-soft);
+    }
+
+    main {
+      margin-top: 26px;
+    }
+
+    .section {
+      margin-top: 26px;
+      padding: 30px;
+      border: 1px solid rgba(229, 234, 241, 0.9);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: 0 12px 36px rgba(15, 23, 42, 0.045);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 25px;
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+    }
+
+    .section-note {
+      margin: 0;
+      color: var(--subtle);
+      font-size: 14px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .info-card,
+    .research-card,
+    .project-card,
+    .publication {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+
+    .info-card {
+      padding: 18px;
+    }
+
+    .info-label {
+      margin-bottom: 4px;
+      color: var(--subtle);
+      font-size: 13px;
+      font-weight: 750;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .info-value {
+      color: #243145;
+      font-weight: 650;
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .research-card {
+      padding: 18px;
+    }
+
+    .research-card h3,
+    .project-card h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+    }
+
+    .research-card p,
+    .project-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border: 1px solid #dbeafe;
+      border-radius: var(--radius-sm);
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      font-size: 13px;
+      font-weight: 750;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .publication-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .publication {
+      padding: 18px;
+    }
+
+    .pub-topline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .year-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 9px;
+      border-radius: var(--radius-sm);
+      background: #eef2ff;
+      color: #3730a3;
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .venue-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 9px;
+      border-radius: var(--radius-sm);
+      background: var(--surface-soft);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      font-weight: 750;
+      line-height: 1;
+    }
+
+    .pub-title {
+      margin: 0;
+      color: var(--text);
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.45;
+      letter-spacing: -0.015em;
+    }
+
+    .pub-authors {
+      margin: 7px 0 0;
+      color: #3f4a5a;
+      font-size: 14.5px;
+    }
+
+    .pub-venue {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .pub-links,
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .small-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid #bfdbfe;
+      background: #ffffff;
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 750;
+      line-height: 1;
+    }
+
+    .small-link:hover {
+      background: var(--primary-soft);
+      text-decoration: none;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .project-card {
+      padding: 18px;
+    }
+
+    .footer {
+      margin-top: 28px;
+      color: var(--subtle);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .footer a {
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    @media (max-width: 820px) {
+      .page {
+        padding: 18px 14px 42px;
+      }
+
+      .nav {
+        position: static;
+        align-items: flex-start;
+        border-radius: 22px;
+      }
+
+      .nav,
+      .section-header {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 28px;
+      }
+
+      .avatar-wrap {
+        justify-self: start;
+        order: -1;
+      }
+
+      .avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 28px;
+      }
+
+      .info-grid,
+      .research-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 22px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .nav-links a {
+        padding: 6px 8px;
+      }
+
+      .hero {
+        padding: 22px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .chinese-name {
+        display: block;
+        margin-left: 0;
+        margin-top: 4px;
+      }
+
+      .button {
+        width: 100%;
+      }
     }
   </style>
 </head>
 
 <body>
+  <div class="page">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="nav-name" href="#">Hongyi Li</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
 
-<div class="container">
+    <header class="hero" id="about">
+      <div>
+        <div class="eyebrow">Ph.D. Student · Control Science and Engineering</div>
+        <h1>Hongyi Li <span class="chinese-name">李鸿懿</span></h1>
+        <p class="role">
+          Harbin Institute of Technology, Shenzhen<br />
+          哈尔滨工业大学（深圳）
+        </p>
+        <p class="summary">
+          My research interests include machine learning, tree-based models,
+          optimization algorithms, model predictive control, and distributed optimization.
+        </p>
 
-  <div class="top">
-    <div class="left">
-      <h1>Hongyi Li 李鸿懿</h1>
-
-      <div class="info">
-        Ph.D. Student in Control Science and Engineering<br>
-        控制科学与工程博士研究生<br>
-        Harbin Institute of Technology, Shenzhen<br>
-        哈尔滨工业大学（深圳）<br>
-        Advisor: Prof. Jun Xu<br>
-        导师：许鋆教授<br>
-        Email: <a href="mailto:23b904015@stu.hit.edu.cn">23b904015@stu.hit.edu.cn</a><br>
+        <div class="contact-row" id="contact">
+          <a class="button primary" href="/cdn-cgi/l/email-protection#b38180d18a8387838286f3c0c7c69ddbdac79dd6d7c69dd0dd">Email</a>
+          <a class="button" href="https://github.com/Hongyi-Li-sz" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="button" href="#publications">Publications</a>
+        </div>
       </div>
 
-      
-    </div>
+      <div class="avatar-wrap">
+        <img class="avatar" src="avatar.jpg" alt="Hongyi Li" />
+      </div>
+    </header>
 
-    <img src="avatar.jpg" class="avatar">
+    <main>
+      <section class="section" aria-labelledby="profile-heading">
+        <div class="section-header">
+          <h2 id="profile-heading">Profile</h2>
+          <p class="section-note">Basic information</p>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-label">Position</div>
+            <div class="info-value">
+              Ph.D. Student in Control Science and Engineering<br />
+              控制科学与工程博士研究生
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-label">Affiliation</div>
+            <div class="info-value">
+              Harbin Institute of Technology, Shenzhen<br />
+              哈尔滨工业大学（深圳）
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-label">Advisor</div>
+            <div class="info-value">
+              Prof. Jun Xu<br />
+              许鋆教授
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-label">Email</div>
+            <div class="info-value">
+              <a href="/cdn-cgi/l/email-protection#695b5a0b50595d59585c291a1d1c4701001d470c0d1c470a07"><span class="__cf_email__" data-cfemail="695b5a0b50595d59585c291a1d1c4701001d470c0d1c470a07">[email&#160;protected]</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="research" aria-labelledby="research-heading">
+        <div class="section-header">
+          <h2 id="research-heading">Research</h2>
+          <p class="section-note">Areas and current focus</p>
+        </div>
+
+        <div class="research-grid">
+          <article class="research-card">
+            <h3>Machine Learning & Tree-based Models</h3>
+            <p>Learning methods and model structures for tabular and structured data.</p>
+          </article>
+
+          <article class="research-card">
+            <h3>Optimization Algorithms</h3>
+            <p>Optimization methods for learning problems and structured decision models.</p>
+          </article>
+
+          <article class="research-card">
+            <h3>Model Predictive Control</h3>
+            <p>Control and optimization methods for energy, comfort, and large-scale systems.</p>
+          </article>
+        </div>
+
+        <div class="tags" aria-label="Research interest tags">
+          <span class="tag">Machine Learning</span>
+          <span class="tag">Tree-based Models</span>
+          <span class="tag">Optimization Algorithms</span>
+          <span class="tag">Model Predictive Control</span>
+          <span class="tag">Distributed Optimization</span>
+        </div>
+      </section>
+
+      <section class="section" id="publications" aria-labelledby="publications-heading">
+        <div class="section-header">
+          <h2 id="publications-heading">Selected Publications</h2>
+          <p class="section-note">Sorted by year</p>
+        </div>
+
+        <div class="publication-list" id="publication-list"></div>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-heading">
+        <div class="section-header">
+          <h2 id="projects-heading">Projects</h2>
+          <p class="section-note">Code repositories</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <h3>HRT-Boost</h3>
+            <p>Code for “Hinge Regression Trees and HRT-Boost”.</p>
+            <div class="project-links">
+              <a class="small-link" href="https://github.com/Hongyi-Li-sz/HRT-Boost" target="_blank" rel="noopener noreferrer">Code</a>
+              <a class="small-link" href="https://arxiv.org/pdf/2605.23422" target="_blank" rel="noopener noreferrer">PDF</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Hinge Regression Tree</h3>
+            <p>Code for “Hinge Regression Tree: A Newton Method for Oblique Regression Tree Splitting”.</p>
+            <div class="project-links">
+              <a class="small-link" href="https://github.com/Hongyi-Li-sz/Hinge-Regression-Tree" target="_blank" rel="noopener noreferrer">Code</a>
+              <a class="small-link" href="https://openreview.net/forum?id=3pZwJB6SX9" target="_blank" rel="noopener noreferrer">Paper</a>
+              <a class="small-link" href="https://arxiv.org/pdf/2602.05371" target="_blank" rel="noopener noreferrer">PDF</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      © Hongyi Li · <a href="https://github.com/Hongyi-Li-sz" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </footer>
   </div>
 
-<div class="research">
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    const publications = [
+      {
+        year: 2026,
+        title: "Hinge Regression Trees and HRT-Boost: Newton-Optimized Oblique Learning for Compact Tabular Models",
+        authors: "<strong>Hongyi Li</strong>, Jun Xu, and Hong Yan",
+        venue: "Preprint",
+        pdf: "https://arxiv.org/pdf/2605.23422",
+        code: "https://github.com/Hongyi-Li-sz/HRT-Boost",
+        firstAuthor: true
+      },
+      {
+        year: 2025,
+        title: "Interpretable Multi-Agent Reinforcement Learning for Traffic Signal Control: Influence Mechanism and Piecewise Linear Approximation",
+        authors: "Zhiyue Luo, <strong>Hongyi Li</strong>, Jun Xu, and Fanglin Chen",
+        venue: "IEEE Transactions on Automation Science and Engineering (IEEE TASE), 2025",
+        paper: "https://doi.org/10.1109/TASE.2025.3618243",
+        firstAuthor: false
+      },
+      {
+        year: 2026,
+        title: "Hinge Regression Tree: A Newton Method for Oblique Regression Tree Splitting",
+        authors: "<strong>Hongyi Li</strong>, Han Lin, and Jun Xu",
+        venue: "International Conference on Learning Representations (ICLR), 2026",
+        pdf: "https://arxiv.org/pdf/2602.05371",
+        paper: "https://openreview.net/forum?id=3pZwJB6SX9",
+        code: "https://github.com/Hongyi-Li-sz/Hinge-Regression-Tree",
+        firstAuthor: true
+      },
+      {
+        year: 2026,
+        title: "Distributed Model Predictive Control for Energy and Comfort Optimization in Large Buildings Using Piecewise Affine Approximation",
+        authors: "<strong>Hongyi Li</strong>, Jun Xu, and JinFeng Liu",
+        venue: "IEEE Robotics and Automation Letters (IEEE RA-L), 2026",
+        pdf: "https://arxiv.org/pdf/2602.05376",
+        paper: "https://doi.org/10.1109/LRA.2026.3665065",
+        firstAuthor: true
+      },
+      {
+        year: 2025,
+        title: "Priority-Based Energy Allocation in Buildings Through Distributed Model Predictive Control",
+        authors: "<strong>Hongyi Li</strong>, Jun Xu, and Qianchuan Zhao",
+        venue: "IEEE Transactions on Automation Science and Engineering (IEEE TASE), 2025",
+        pdf: "https://arxiv.org/pdf/2403.13648",
+        paper: "https://doi.org/10.1109/TASE.2024.3464612",
+        firstAuthor: true
+      },
+      {
+        year: 2024,
+        title: "Economic Model Predictive Control in Buildings Based on Piecewise Linear Approximation of Predicted Mean Vote Index",
+        authors: "<strong>Hongyi Li</strong>, Jun Xu, Qianchuan Zhao, and Sixin Wang",
+        venue: "IEEE Transactions on Automation Science and Engineering (IEEE TASE), 2024",
+        paper: "https://doi.org/10.1109/TASE.2023.3279278",
+        firstAuthor: true
+      }
+    ];
 
-  <h2>Research</h2>
+    const publicationList = document.getElementById("publication-list");
 
-  <div class="section">
-    <div class="section-title">Research Interests</div>
-    <div class="tags">
-      <span class="tag">Machine Learning</span>
-      <span class="tag">Tree-based Models</span>
-      <span class="tag">Optimization Algorithms</span>
-      <span class="tag">Model Predictive Control</span>
-      <span class="tag">Distributed Optimization</span>
-    </div>
-  </div>
+    publications
+      .sort((a, b) => b.year - a.year)
+      .forEach((pub) => {
+        const article = document.createElement("article");
+        article.className = "publication";
 
-  <div class="section">
-    <div class="section-title">Research Focus</div>
-    <div class="focus-list">
-      <div>Designing efficient and interpretable ML models with optimization guarantees</div>
-      <div>Bridging learning and control via piecewise linear / hybrid system modeling</div>
-      <div>Developing scalable optimization methods for structured decision models</div>
-    </div>
-  </div>
+        article.innerHTML = `
+          <div class="pub-topline">
+            <span class="year-badge">${pub.year}</span>
+            <span class="venue-badge">${pub.venue.split(",")[0]}</span>
+            ${pub.firstAuthor ? '<span class="tag">First Author</span>' : ""}
+          </div>
+          <h3 class="pub-title">${pub.title}</h3>
+          <p class="pub-authors">${pub.authors}</p>
+          <p class="pub-venue">${pub.venue}</p>
+          <div class="pub-links">
+            ${pub.pdf ? `<a class="small-link" href="${pub.pdf}" target="_blank" rel="noopener noreferrer">PDF</a>` : ""}
+            ${pub.paper ? `<a class="small-link" href="${pub.paper}" target="_blank" rel="noopener noreferrer">Paper</a>` : ""}
+            ${pub.code ? `<a class="small-link" href="${pub.code}" target="_blank" rel="noopener noreferrer">Code</a>` : ""}
+          </div>
+        `;
 
-</div>
-
-
-  <h2>Seleted Publications</h2>
-  <div id="publications"></div>
-
-</div>
-
-<script>
-const publications = [
-
-    {
-    year: 2026,
-    title: "Hinge Regression Trees and HRT-Boost: Newton-Optimized Oblique Learning for Compact Tabular Models",
-    authors: "<strong>Hongyi Li</strong>, Jun Xu, and Hong Yan",
-    venue: "Preprint",
-    pdf: "https://arxiv.org/pdf/2605.23422",
-    code: "https://github.com/Hongyi-Li-sz/HRT-Boost",
-    firstAuthor: true
-  },
-  {
-    year: 2025,
-    title: "Interpretable Multi-Agent Reinforcement Learning for Traffic Signal Control: Influence Mechanism and Piecewise Linear Approximation",
-    authors: "Zhiyue Luo, <strong>Hongyi Li</strong>, Jun Xu, and Fanglin Chen",
-    venue: "IEEE Transactions on Automation Science and Engineering (IEEE TASE), 2025",
-    paper: "https://doi.org/10.1109/TASE.2025.3618243",
-    firstAuthor: false
-  },
-  {
-    year: 2026,
-    title: "Hinge Regression Tree: A Newton Method for Oblique Regression Tree Splitting",
-    authors: "<strong>Hongyi Li</strong>, Han Lin, and Jun Xu",
-    venue: "International Conference on Learning Representations (ICLR), 2026",
-    pdf: "https://arxiv.org/pdf/2602.05371",
-    paper: "https://openreview.net/forum?id=3pZwJB6SX9",
-    code: "https://github.com/Hongyi-Li-sz/Hinge-Regression-Tree",
-    firstAuthor: true
-  },
-  {
-    year: 2026,
-    title: "Distributed Model Predictive Control for Energy and Comfort Optimization in Large Buildings Using Piecewise Affine Approximation",
-    authors: "<strong>Hongyi Li</strong>, Jun Xu, and JinFeng Liu",
-    venue: "IEEE Robotics and Automation Letters (IEEE RA-L), 2026",
-    pdf: "https://arxiv.org/pdf/2602.05376",
-    paper: "https://doi.org/10.1109/LRA.2026.3665065",
-    firstAuthor: true
-  },
-  {
-    year: 2025,
-    title: "Priority-Based Energy Allocation in Buildings Through Distributed Model Predictive Control",
-    authors: "<strong>Hongyi Li</strong>, Jun Xu, and Qianchuan Zhao",
-    venue: "IEEE Transactions on Automation Science and Engineering (IEEE TASE), 2025",
-    pdf: "https://arxiv.org/pdf/2403.13648",
-    paper: "https://doi.org/10.1109/TASE.2024.3464612",
-    firstAuthor: true
-  },
-  {
-    year: 2024,
-    title: "Economic Model Predictive Control in Buildings Based on Piecewise Linear Approximation of Predicted Mean Vote Index",
-    authors: "<strong>Hongyi Li</strong>, Jun Xu, Qianchuan Zhao, and Sixin Wang",
-    venue: "IEEE Transactions on Automation Science and Engineering (IEEE TASE), 2024",
-    paper: "https://doi.org/10.1109/TASE.2023.3279278",
-    firstAuthor: true
-  }
-];
-
-publications.sort((a, b) => b.year - a.year);
-
-const container = document.getElementById("publications");
-
-publications.forEach(pub => {
-  const div = document.createElement("div");
-  div.className = "publication";
-
-
-div.innerHTML = `
-  <div class="pub-title">${pub.title}</div>
-  <div>
-    ${pub.authors}
-    ${pub.firstAuthor ? `<span class="tag">First Author</span>` : ""}
-  </div>
-  <div>${pub.venue}</div>
-  <div class="buttons">
-    ${pub.pdf ? `<a class="button" href="${pub.pdf}" target="_blank">PDF</a>` : ""}
-    ${pub.paper ? `<a class="button" href="${pub.paper}" target="_blank">Paper</a>` : ""}
-    ${pub.code ? `<a class="button" href="${pub.code}" target="_blank">Code</a>` : ""}
-  </div>
-`;
-
-
-
-  container.appendChild(div);
-});
-</script>
-
+        publicationList.appendChild(article);
+      });
+  </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
