@@ -156,7 +156,7 @@
     .hero {
       position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 230px;
+      grid-template-columns: minmax(0, 1fr) 190px;
       gap: 40px;
       align-items: center;
       margin-top: 28px;
@@ -213,10 +213,11 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(42px, 7vw, 72px);
-      line-height: 0.98;
-      letter-spacing: -0.065em;
+      font-size: clamp(34px, 5.8vw, 58px);
+      line-height: 1.02;
+      letter-spacing: -0.055em;
     }
+
 
     .name-cn {
       display: inline-block;
@@ -307,13 +308,13 @@
       position: relative;
       z-index: 2;
       justify-self: end;
-      width: 218px;
-      padding: 12px;
+      width: 184px;
+      padding: 10px;
       border: 1px solid var(--line);
-      border-radius: 36px;
+      border-radius: 30px;
       background:
         linear-gradient(145deg, rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.58));
-      box-shadow: 0 20px 44px rgba(15, 23, 42, 0.11);
+      box-shadow: 0 18px 38px rgba(15, 23, 42, 0.10);
     }
 
     .avatar-panel::before {
@@ -330,8 +331,9 @@
       display: block;
       width: 100%;
       aspect-ratio: 1;
-      object-fit: cover;
-      border-radius: 26px;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 22px;
       background: #eef2ff;
     }
 
@@ -648,8 +650,8 @@
       .avatar-panel {
         order: -1;
         justify-self: start;
-        width: 172px;
-        border-radius: 30px;
+        width: 150px;
+        border-radius: 28px;
       }
 
       .avatar-panel::before {
@@ -736,7 +738,7 @@
         <div class="hero-actions" id="contact">
           <a class="button primary" href="https://github.com/Hongyi-Li-sz" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a class="button" href="#publications">Publications</a>
-          <span class="plain-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="497b7a2b70797d79787c093a3d3c6721203d672c2d3c672a27">[email&#160;protected]</a></span>
+          <span class="plain-email">Email: 23b904015@stu.hit.edu.cn</span>
         </div>
       </div>
 
@@ -779,7 +781,7 @@
 
           <div class="profile-card">
             <div class="label">Email</div>
-            <div class="email-text"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1c2e2f7e252c282c2d295c6f68693274756832797869327f72">[email&#160;protected]</a></div>
+            <div class="email-text">23b904015@stu.hit.edu.cn</div>
           </div>
         </div>
       </section>
@@ -792,19 +794,16 @@
 
         <div class="research-grid">
           <article class="research-card">
-            <div class="research-icon blue" aria-hidden="true">▦</div>
             <h3>Machine Learning & Tree-based Models</h3>
             <p>Learning methods and model structures for tabular and structured data.</p>
           </article>
 
           <article class="research-card">
-            <div class="research-icon violet" aria-hidden="true">⌁</div>
             <h3>Optimization Algorithms</h3>
             <p>Optimization methods for learning problems and structured decision models.</p>
           </article>
 
           <article class="research-card">
-            <div class="research-icon orange" aria-hidden="true">↗</div>
             <h3>Model Predictive Control</h3>
             <p>Control and optimization methods for energy, comfort, and large-scale systems.</p>
           </article>
@@ -862,7 +861,7 @@
     </footer>
   </div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     const publications = [
       {
         year: 2026,
